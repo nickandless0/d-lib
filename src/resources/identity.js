@@ -97,11 +97,11 @@ export default class Identities extends ResourceBase {
 
       const tx = await this.chainService.setIdentity(subject.address, store, provider)
 
-      await this.chainService.setIdentityRegistry(subject.address, provider)
+      this.chainService.setIdentityRegistry(subject.address, provider)
 
       if (tx !== '0x0') {      
 
-        await this.setLog(subject.address, subject.address, {type: 'identity', action: 'create', name: 'wallet', tx: tx, timestamp: Math.floor(Date.now() / 1000)} )
+        this.setLog(subject.address, subject.address, {type: 'identity', action: 'create', name: 'wallet', tx: tx, timestamp: Math.floor(Date.now() / 1000)} )
 
         const elapsed = (Date.now() - start) + ' ms'
 
@@ -181,11 +181,11 @@ export default class Identities extends ResourceBase {
 
       const tx = await this.chainService.setIdentity(subject.address, store, provider)
 
-      await this.chainService.setIdentityRegistry(subject.address, provider)
+      this.chainService.setIdentityRegistry(subject.address, provider)
 
       if (tx !== '0x0') {      
 
-        await this.setLog(subject.address, subject.address, {type: 'identity', action: 'create', name: 'wallet', tx: tx, timestamp: Math.floor(Date.now() / 1000)} )
+        this.setLog(subject.address, subject.address, {type: 'identity', action: 'create', name: 'wallet', tx: tx, timestamp: Math.floor(Date.now() / 1000)} )
 
         const elapsed = 2 + ' ms'
 
@@ -331,7 +331,7 @@ export default class Identities extends ResourceBase {
 
       if (tx !== '0x0') {
         
-        await this.setLog(identity, identity, {type: 'identity', action: 'deactivate', name: identity, tx: tx, timestamp: Math.floor(Date.now() / 1000)} )
+        this.setLog(identity, identity, {type: 'identity', action: 'deactivate', name: identity, tx: tx, timestamp: Math.floor(Date.now() / 1000)} )
 
         const success = true
 
@@ -410,7 +410,7 @@ export default class Identities extends ResourceBase {
 
       if (tx !== '0x0') {
 
-        await this.setLog(identity, identity, {type: 'alias', action: 'create', name: alias, tx: tx, timestamp: Math.floor(Date.now() / 1000)} )
+        this.setLog(identity, identity, {type: 'alias', action: 'create', name: alias, tx: tx, timestamp: Math.floor(Date.now() / 1000)} )
 
         const res = await this.chainService.getAlias(alias, provider)
 
@@ -586,7 +586,7 @@ export default class Identities extends ResourceBase {
 
       if (tx !== '0x0') {
         
-        await this.setLog(resAlias.identityAddress, resAlias.identityAddress, {type: 'alias', action: 'deactivate', name: alias, tx: tx, timestamp: Math.floor(Date.now() / 1000)} )
+        this.setLog(resAlias.identityAddress, resAlias.identityAddress, {type: 'alias', action: 'deactivate', name: alias, tx: tx, timestamp: Math.floor(Date.now() / 1000)} )
 
         const success = true
 
@@ -663,7 +663,7 @@ export default class Identities extends ResourceBase {
 
       if (tx !== '0x0') {
 
-        await this.setLog(identity, identity, {type: 'identity', action: 'update', name: 'profile', tx: tx, timestamp: Math.floor(Date.now() / 1000)} )
+        this.setLog(identity, identity, {type: 'identity', action: 'update', name: 'profile', tx: tx, timestamp: Math.floor(Date.now() / 1000)} )
         
         const success = true
 
@@ -985,7 +985,7 @@ export default class Identities extends ResourceBase {
       const resSub = await this.setLog(identity, audience, {type: 'authorization', action: 'request', name: type, tx: '0x0', payload: payload, timestamp: Math.floor(Date.now() / 1000)} )
       
       /// log for aud
-      await this.setLog(audience, identity, {type: 'authorization', action: 'requested', name: type, tx: '0x0', payload: payload, timestamp: Math.floor(Date.now() / 1000)} )
+      this.setLog(audience, identity, {type: 'authorization', action: 'requested', name: type, tx: '0x0', payload: payload, timestamp: Math.floor(Date.now() / 1000)} )
 
       const elapsed = 2 + ' ms'
 
@@ -1160,7 +1160,7 @@ export default class Identities extends ResourceBase {
       //   to: audProfile.token
       // })
 
-      await this.setLog(identity, audience, {type: 'authorization', action: 'responded', name: type, tx: '0x0', payload: payload, timestamp: Math.floor(Date.now() / 1000)} )
+      this.setLog(identity, audience, {type: 'authorization', action: 'responded', name: type, tx: '0x0', payload: payload, timestamp: Math.floor(Date.now() / 1000)} )
 
       const resAud = await this.setLog(audience, identity, {type: 'authorization', action: 'response', name: type, tx: '0x0', payload: payload, timestamp: Math.floor(Date.now() / 1000)} )
 

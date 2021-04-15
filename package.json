@@ -1,6 +1,6 @@
 {
   "name": "@d-protocol/d-lib",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "The D Protocol Library",
   "main": "./dist/index.js",
   "scripts": {
@@ -9,7 +9,7 @@
     "install:dev": "npm install && npm link",
     "prepare": "npm run build",
     "start": "node scripts/build.js serve development",
-    "start:d-lib": "node scripts/build.js serve d-lib",
+    "start:d": "node scripts/build.js serve d",
     "start:rinkeby": "node scripts/build.js serve rinkeby",
     "start:sing": "node scripts/build.js serve sing",
     "test": "node scripts/test.js",

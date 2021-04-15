@@ -24,7 +24,7 @@ const truffleSetup = {
     },
     d: {
       provider: () => {
-        return new HDWalletProvider(mnemonic, 'http://34.219.79.17:8545')
+        return new HDWalletProvider(mnemonic, 'http://35.80.248.156:8545')
       },
       network_id: '*'
     },
