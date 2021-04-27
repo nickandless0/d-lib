@@ -142,11 +142,11 @@ export default class ChainService {
         identity,
         store,
         true,
-        {
-          gasPrice: ethers.utils.parseUnits('66', 'gwei'),
-          // gasPrice: web3.utils.toWei('66', 'gwei'),
-          // gasLimit: web3.utils.toWei('66', 'gwei')
-        }
+        // {
+        //   gasPrice: ethers.utils.parseUnits('66', 'gwei'),
+        //   // gasPrice: web3.utils.toWei('66', 'gwei'),
+        //   // gasLimit: web3.utils.toWei('66', 'gwei')
+        // }
       )
     
       await tx.wait()
@@ -540,11 +540,11 @@ export default class ChainService {
     const tx = await signer.setIdentityStore(
       identity,
       store,
-      {
-        gasPrice: ethers.utils.parseUnits('66', 'gwei'),
-        // gasPrice: web3.utils.toWei('66', 'gwei'),
-        // gasLimit: web3.utils.toWei('66', 'gwei')
-      }
+    //   {
+    //     gasPrice: ethers.utils.parseUnits('66', 'gwei'),
+    //     // gasPrice: web3.utils.toWei('66', 'gwei'),
+    //     // gasLimit: web3.utils.toWei('66', 'gwei')
+    //   }
     )
     
     await tx.wait()
@@ -591,20 +591,23 @@ export default class ChainService {
       //   console.log('active', active)
       //   console.log('blockNumber', event.blockNumber)
       // })
-
+    //   let nonceOffset = 0
+    //   const baseNonce = provider.getTransactionCount(await owner.getAddress())
+    //   console.log('baseNonce', await baseNonce)
       const tx = await signer.setAlias(
         bytes32Alias,
         identity,
         burner,
         new Date(expiry).getTime(),
         nonce,
-        {
-          gasPrice: ethers.utils.parseUnits('72', 'gwei'),
-          // gasPrice: web3.utils.toWei('66', 'gwei'),
-          // gasLimit: web3.utils.toWei('66', 'gwei')
-        }
+        // {
+        //   nonce: await baseNonce.then((nonce) => nonce + (nonceOffset++)),
+        //   gasPrice: ethers.utils.parseUnits('72', 'gwei'),
+        //   // gasPrice: web3.utils.toWei('66', 'gwei'),
+        //   // gasLimit: web3.utils.toWei('66', 'gwei')
+        // }
       )
-    
+      // console.log('transaction', tx)
       await tx.wait()
 
       return tx.hash
@@ -664,11 +667,11 @@ export default class ChainService {
       const tx = await signer.setAliasActive(
         bytes32Alias,
         active,
-        {
-          gasPrice: ethers.utils.parseUnits('66', 'gwei'),
-          // gasPrice: web3.utils.toWei('66', 'gwei'),
-          // gasLimit: web3.utils.toWei('66', 'gwei')
-        }  
+        // {
+        //   gasPrice: ethers.utils.parseUnits('66', 'gwei'),
+        //   // gasPrice: web3.utils.toWei('66', 'gwei'),
+        //   // gasLimit: web3.utils.toWei('66', 'gwei')
+        // }  
       )
     
       await tx.wait()
@@ -701,11 +704,11 @@ export default class ChainService {
     if (!isIdentity) {
       const tx = await signer.setIdentity(
         identity,
-        {
-          gasPrice: ethers.utils.parseUnits('66', 'gwei'),
-          // gasPrice: web3.utils.toWei('66', 'gwei'),
-          // gasLimit: web3.utils.toWei('66', 'gwei')
-        }
+        // {
+        //   gasPrice: ethers.utils.parseUnits('66', 'gwei'),
+        //   // gasPrice: web3.utils.toWei('66', 'gwei'),
+        //   // gasLimit: web3.utils.toWei('66', 'gwei')
+        // }
       )
     
       await tx.wait()
@@ -754,11 +757,11 @@ export default class ChainService {
         audience,
         store,
         bytes32LogType,
-        {
-          gasPrice: ethers.utils.parseUnits('66', 'gwei'),
-          // gasPrice: web3.utils.toWei('66', 'gwei'),
-          // gasLimit: web3.utils.toWei('66', 'gwei')
-        }
+        // {
+        //   gasPrice: ethers.utils.parseUnits('66', 'gwei'),
+        //   // gasPrice: web3.utils.toWei('66', 'gwei'),
+        //   // gasLimit: web3.utils.toWei('66', 'gwei')
+        // }
       )
     
       await tx.wait()
@@ -800,11 +803,11 @@ export default class ChainService {
       const tx = await signer.setLogTx(
         store,
         txn,
-        {
-          gasPrice: ethers.utils.parseUnits('66', 'gwei'),
-          // gasPrice: web3.utils.toWei('66', 'gwei'),
-          // gasLimit: web3.utils.toWei('66', 'gwei')
-        }  
+        // {
+        //   gasPrice: ethers.utils.parseUnits('66', 'gwei'),
+        //   // gasPrice: web3.utils.toWei('66', 'gwei'),
+        //   // gasLimit: web3.utils.toWei('66', 'gwei')
+        // }  
       )
         
       await tx.wait()
