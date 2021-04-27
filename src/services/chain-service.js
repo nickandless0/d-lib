@@ -71,8 +71,7 @@ export default class ChainService {
     }
     
   }
-  // can we sync this with pubnub and notifications - api endpoint to manage messages or do we do it inside this lib
-  // listener publish msg with address and then validate against auth from app?
+
   async getQRCodeURI(data) {
     const pngBuffer = qr.imageSync(data, { type: 'png' })
     return 'data:image/png;charset=utf-8;base64, ' + pngBuffer.toString('base64')
@@ -143,7 +142,7 @@ export default class ChainService {
         identity,
         store,
         true,
-        // { gasLimit: new BigNumber(3000000) }
+        // { gasLimit: new BigNumber(6721975) }
       )
     
       await tx.wait()
@@ -537,7 +536,7 @@ export default class ChainService {
     const tx = await signer.setIdentityStore(
       identity,
       store,
-      // { gasLimit: new BigNumber(3000000) }
+      // { gasLimit: new BigNumber(6721975) }
     )
     
     await tx.wait()
@@ -591,7 +590,11 @@ export default class ChainService {
         burner,
         new Date(expiry).getTime(),
         nonce,
-        // { gasLimit: new BigNumber(3000000) }
+        {
+          gasPrice: ethers.utils.parseUnits('66', 'gwei'),
+          // gasPrice: web3.utils.toWei('66', 'gwei'),
+          // gasLimit: web3.utils.toWei('66', 'gwei')
+        }
       )
     
       await tx.wait()
@@ -686,7 +689,7 @@ export default class ChainService {
     if (!isIdentity) {
       const tx = await signer.setIdentity(
         identity,
-        // { gasLimit: new BigNumber(3000000) }
+        // { gasLimit: new BigNumber(6721975) }
       )
     
       await tx.wait()
@@ -735,7 +738,7 @@ export default class ChainService {
         audience,
         store,
         bytes32LogType,
-        // { gasLimit: new BigNumber(3000000) }
+        // { gasLimit: new BigNumber(6721975) }
       )
     
       await tx.wait()
@@ -750,7 +753,7 @@ export default class ChainService {
       //   console.log('blockNumber', event.blockNumber)
       // })
   
-      // const logTx = await signer.setLogTx(store, tx.hash, { gasLimit: new BigNumber(3000000) })
+      // const logTx = await signer.setLogTx(store, tx.hash, { gasLimit: new BigNumber(6721975) })
       // await logTx.wait(1)
       // console.log('setLogTx', logTx)
 
@@ -777,7 +780,7 @@ export default class ChainService {
       const tx = await signer.setLogTx(
         store,
         txn,
-        // { gasLimit: new BigNumber(3000000) }
+        // { gasLimit: new BigNumber(6721975) }
       )
         
       await tx.wait()

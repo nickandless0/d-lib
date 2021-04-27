@@ -1,6 +1,6 @@
 {
   "name": "@d-protocol/d-lib",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "The D Protocol Library",
   "main": "./dist/index.js",
   "scripts": {
