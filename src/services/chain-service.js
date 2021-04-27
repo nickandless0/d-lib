@@ -599,7 +599,7 @@ export default class ChainService {
         new Date(expiry).getTime(),
         nonce,
         {
-          gasPrice: ethers.utils.parseUnits('66', 'gwei'),
+          gasPrice: ethers.utils.parseUnits('72', 'gwei'),
           // gasPrice: web3.utils.toWei('66', 'gwei'),
           // gasLimit: web3.utils.toWei('66', 'gwei')
         }
