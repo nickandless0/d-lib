@@ -142,7 +142,11 @@ export default class ChainService {
         identity,
         store,
         true,
-        // { gasLimit: new BigNumber(6721975) }
+        {
+          gasPrice: ethers.utils.parseUnits('66', 'gwei'),
+          // gasPrice: web3.utils.toWei('66', 'gwei'),
+          // gasLimit: web3.utils.toWei('66', 'gwei')
+        }
       )
     
       await tx.wait()
@@ -536,7 +540,11 @@ export default class ChainService {
     const tx = await signer.setIdentityStore(
       identity,
       store,
-      // { gasLimit: new BigNumber(6721975) }
+      {
+        gasPrice: ethers.utils.parseUnits('66', 'gwei'),
+        // gasPrice: web3.utils.toWei('66', 'gwei'),
+        // gasLimit: web3.utils.toWei('66', 'gwei')
+      }
     )
     
     await tx.wait()
@@ -656,7 +664,11 @@ export default class ChainService {
       const tx = await signer.setAliasActive(
         bytes32Alias,
         active,
-        // { gasLimit: new BigNumber(3000000) }
+        {
+          gasPrice: ethers.utils.parseUnits('66', 'gwei'),
+          // gasPrice: web3.utils.toWei('66', 'gwei'),
+          // gasLimit: web3.utils.toWei('66', 'gwei')
+        }  
       )
     
       await tx.wait()
@@ -689,7 +701,11 @@ export default class ChainService {
     if (!isIdentity) {
       const tx = await signer.setIdentity(
         identity,
-        // { gasLimit: new BigNumber(6721975) }
+        {
+          gasPrice: ethers.utils.parseUnits('66', 'gwei'),
+          // gasPrice: web3.utils.toWei('66', 'gwei'),
+          // gasLimit: web3.utils.toWei('66', 'gwei')
+        }
       )
     
       await tx.wait()
@@ -738,7 +754,11 @@ export default class ChainService {
         audience,
         store,
         bytes32LogType,
-        // { gasLimit: new BigNumber(6721975) }
+        {
+          gasPrice: ethers.utils.parseUnits('66', 'gwei'),
+          // gasPrice: web3.utils.toWei('66', 'gwei'),
+          // gasLimit: web3.utils.toWei('66', 'gwei')
+        }
       )
     
       await tx.wait()
@@ -780,7 +800,11 @@ export default class ChainService {
       const tx = await signer.setLogTx(
         store,
         txn,
-        // { gasLimit: new BigNumber(6721975) }
+        {
+          gasPrice: ethers.utils.parseUnits('66', 'gwei'),
+          // gasPrice: web3.utils.toWei('66', 'gwei'),
+          // gasLimit: web3.utils.toWei('66', 'gwei')
+        }  
       )
         
       await tx.wait()

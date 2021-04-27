@@ -101,7 +101,7 @@ export default class Identities extends ResourceBase {
 
       if (tx !== '0x0') {      
 
-        this.setLog(subject.address, subject.address, {type: 'identity', action: 'create', name: 'wallet', tx: tx, timestamp: Math.floor(Date.now() / 1000)} )
+        // this.setLog(subject.address, subject.address, {type: 'identity', action: 'create', name: 'wallet', tx: tx, timestamp: Math.floor(Date.now() / 1000)} )
 
         const elapsed = (Date.now() - start) + ' ms'
 
@@ -185,7 +185,7 @@ export default class Identities extends ResourceBase {
 
       if (tx !== '0x0') {      
 
-        this.setLog(subject.address, subject.address, {type: 'identity', action: 'create', name: 'wallet', tx: tx, timestamp: Math.floor(Date.now() / 1000)} )
+        // this.setLog(subject.address, subject.address, {type: 'identity', action: 'create', name: 'wallet', tx: tx, timestamp: Math.floor(Date.now() / 1000)} )
 
         const elapsed = 2 + ' ms'
 
@@ -331,7 +331,7 @@ export default class Identities extends ResourceBase {
 
       if (tx !== '0x0') {
         
-        this.setLog(identity, identity, {type: 'identity', action: 'deactivate', name: identity, tx: tx, timestamp: Math.floor(Date.now() / 1000)} )
+        // this.setLog(identity, identity, {type: 'identity', action: 'deactivate', name: identity, tx: tx, timestamp: Math.floor(Date.now() / 1000)} )
 
         const success = true
 
@@ -410,7 +410,7 @@ export default class Identities extends ResourceBase {
 
       if (tx !== '0x0') {
 
-        this.setLog(identity, identity, {type: 'alias', action: 'create', name: alias, tx: tx, timestamp: Math.floor(Date.now() / 1000)} )
+        // this.setLog(identity, identity, {type: 'alias', action: 'create', name: alias, tx: tx, timestamp: Math.floor(Date.now() / 1000)} )
 
         const res = await this.chainService.getAlias(alias, provider)
 
@@ -580,13 +580,13 @@ export default class Identities extends ResourceBase {
 
       const provider = await this.chainService.getProvider()
 
-      const resAlias = await this.chainService.getAlias(alias, provider)
+      // const resAlias = await this.chainService.getAlias(alias, provider)
 
       const tx = await this.chainService.setAliasActive(alias, false, provider)
 
       if (tx !== '0x0') {
         
-        this.setLog(resAlias.identityAddress, resAlias.identityAddress, {type: 'alias', action: 'deactivate', name: alias, tx: tx, timestamp: Math.floor(Date.now() / 1000)} )
+        // this.setLog(resAlias.identityAddress, resAlias.identityAddress, {type: 'alias', action: 'deactivate', name: alias, tx: tx, timestamp: Math.floor(Date.now() / 1000)} )
 
         const success = true
 
@@ -663,7 +663,7 @@ export default class Identities extends ResourceBase {
 
       if (tx !== '0x0') {
 
-        this.setLog(identity, identity, {type: 'identity', action: 'update', name: 'profile', tx: tx, timestamp: Math.floor(Date.now() / 1000)} )
+        // this.setLog(identity, identity, {type: 'identity', action: 'update', name: 'profile', tx: tx, timestamp: Math.floor(Date.now() / 1000)} )
         
         const success = true
 
