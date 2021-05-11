@@ -26,7 +26,8 @@ export default class Docs extends ResourceBase {
     this.pubnub = new PubNub({
       publishKey : options.pnKey,
       subscribeKey : options.pnsKey,
-      ssl: true
+      ssl: true,
+      // uuid: options.pnUUID      
     })
 
   }
