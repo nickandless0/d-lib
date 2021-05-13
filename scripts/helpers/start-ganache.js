@@ -7,7 +7,7 @@ const startGanache = () => {
     const server = Ganache.server({
       total_accounts: 6,
       default_balance_ether: 100,
-      network_id: 999,
+      network_id: 31337,
       // seed: 123,
       blocktime: 0,
       gasPrice: 0x01,
