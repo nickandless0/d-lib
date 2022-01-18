@@ -44,3 +44,4 @@ testem.log
 !.elasticbeanstalk/*.global.yml
 
 package-lock.json
+.env

@@ -1,6 +1,6 @@
 const TestRPC = require('ganache-cli')
 const HDWalletProvider = require('truffle-hdwallet-provider')
-const mnemonic = 'auction tourist gloom common fringe indoor flower position grape bench imitate icon'
+const mnemonic = process.env.MNEMONIC
 
 // Truffle setup
 const truffleSetup = {
@@ -45,3 +45,4 @@ const truffleSetup = {
 }
 
 module.exports = truffleSetup
+// https://mainnet.infura.io/v3/3a0c0f8b7bf7435ba9ec3b440eaa403e
