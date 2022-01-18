@@ -73,7 +73,6 @@ describe('Journey', () => {
   before(async () => {
   
     url = 'https://rinkeby.infura.io/v3/3a0c0f8b7bf7435ba9ec3b440eaa403e'
-    // url = 'https://chain.singidea.com'
     // url = 'http://localhost:8545'
 
     // provider = await chainService.setProvider('rinkeby')
