@@ -13,7 +13,10 @@ module.exports = function(deployer, network, accounts) {
 }
 
 async function deployContracts(deployer) {
-  await deployer.deploy(AliasRegistry)
-  await deployer.deploy(IdentityRegistry)
-  await deployer.deploy(Delegate)
+  const aliasRegistry = await deployer.deploy(AliasRegistry);
+  console.log('aliasRegistry address', aliasRegistry.address)
+  const identityRegistry = await deployer.deploy(IdentityRegistry);
+  console.log('identityRegistry address', identityRegistry.address)
+  const delegate = await deployer.deploy(Delegate);
+  console.log('delegate address', delegate.address)
 }
