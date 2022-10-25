@@ -1,10 +1,10 @@
-const Ganache = require('ganache-core')
+const ganache = require('ganache')
 
 const PORT = 8545
 
 const startGanache = () => {
   return new Promise((resolve, reject) => {
-    const server = Ganache.server({
+    const server = ganache.server({
       total_accounts: 6,
       default_balance_ether: 100,
       network_id: 31337,
